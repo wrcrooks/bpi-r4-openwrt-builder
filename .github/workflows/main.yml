@@ -36,12 +36,12 @@ jobs:
     steps:
       - name: Install dependencies
         run: |
-          sudo apt update
-          sudo apt install -y \
+          sudo apt update -S
+          sudo apt install -S -y \
             build-essential clang flex bison g++ gawk \
             gcc-multilib g++-multilib gettext git libncurses5-dev libssl-dev \
             python3-setuptools rsync swig unzip zlib1g-dev file wget curl
-          sudo apt full-upgrade -y
+          sudo apt full-upgrade -S -y
       - name: Checkout remote repository
         uses: actions/checkout@v4
         with:
