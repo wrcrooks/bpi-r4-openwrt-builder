@@ -43,6 +43,7 @@ jobs:
             python3-setuptools rsync swig unzip zlib1g-dev file wget curl
           sudo apt full-upgrade -y
           git config --global https.postBuffer 1048576000
+          git config --global core.compression 0
       - name: Checkout remote repository
         uses: actions/checkout@v4
         with:
