@@ -68,7 +68,7 @@ jobs:
         run: make -j $(nproc) download
 
       - name: Build the firmware image
-        run: make -j $(nproc) world
+        run: make -j $(nproc) V=sc world
 
       - name: Package output
         run: tar -cvf bpi_r4-images.tar bin/targets/mediatek/filogic
