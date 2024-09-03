@@ -64,6 +64,7 @@ jobs:
       - name: Remove packages that are marked as modules just to save time
         run: |
           grep "=m" .config | grep -v 'CONFIG_PACKAGE_libustream-mbedtls=m' | while read -r line; do module=$(echo "$line" | cut -f1 -d'='); sed -i "s/^$line$/# $module is not set/" .config; done
+          cat .config
       - name: Download dependencies
         run: make -j $(nproc) download
 
