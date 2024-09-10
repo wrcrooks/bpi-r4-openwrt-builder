@@ -14,7 +14,7 @@ env:
 jobs:
   check_commits:
     name: Check Commits
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     outputs:
       latest_commit_sha: ${{ steps.get_sha.outputs.latest_commit_sha }}
     steps:
@@ -32,7 +32,7 @@ jobs:
   build:
     name: Build BPI-R4 with BE14 + luci + hostapd patch
     needs: [check_commits]
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Install dependencies
         run: |
@@ -84,7 +84,7 @@ jobs:
     name: Create release
     needs: [build, check_commits]
     if: needs.build.result == 'success'
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v4
