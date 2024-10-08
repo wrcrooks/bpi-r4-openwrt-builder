@@ -25,26 +25,6 @@ curl -SL https://raw.githubusercontent.com/danpawlik/openwrt-builder/master/conf
 #echo "CONFIG_PACKAGE_kmod-mtk-t7xx=y" >> ../openwrt/.config
 #echo "CONFIG_PACKAGE_kmod-usb-net-cdc-eem=y" >> ../openwrt/.config
 #echo "CONFIG_PACKAGE_qrencode=y" >> ../openwrt/.config
-#echo "CONFIG_PACKAGE_luci-ssl-openssl=y" >> ../openwrt/.config
-#echo "CONFIG_PACKAGE_luci-theme-material=y" >> ../openwrt/.config
-#echo "CONFIG_PACKAGE_kmod-wireguard=y" >> ../openwrt/.config
-#echo "CONFIG_PACKAGE_wireguard-tools=y" >> ../openwrt/.config
-#echo "CONFIG_PACKAGE_luci-proto-wireguard=y" >> ../openwrt/.config
-#echo "CONFIG_PACKAGE_luci-app-samba4=y" >> ../openwrt/.config
-#echo "CONFIG_PACKAGE_openvpn-openssl=y" >> ../openwrt/.config
-#echo "CONFIG_PACKAGE_luci-app-openvpn=y" >> ../openwrt/.config
-
-echo "CONFIG_PACKAGE_adblock=y" >> ../openwrt/.config
-echo "CONFIG_PACKAGE_ddns-scripts=y" >> ../openwrt/.config
-echo "CONFIG_PACKAGE_luci-app-ddns=y" >> ../openwrt/.config
-echo "CONFIG_PACKAGE_luci-app-ntpc=y" >> ../openwrt/.config
-echo "CONFIG_PACKAGE_minicom=y" >> ../openwrt/.config
-echo "CONFIG_PACKAGE_nano-full=y" >> ../openwrt/.config
-echo "CONFIG_PACKAGE_nmap-full=y" >> ../openwrt/.config
-echo "CONFIG_PACKAGE_ntpclient=y" >> ../openwrt/.config
-echo "CONFIG_PACKAGE_snmpd=y" >> ../openwrt/.config
-echo "CONFIG_PACKAGE_wget-ssl=y" >> ../openwrt/.config
-echo "CONFIG_PACKAGE_zsh=y" >> ../openwrt/.config
 
 make -C ../openwrt defconfig
 
