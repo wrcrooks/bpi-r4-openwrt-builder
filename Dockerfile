@@ -10,7 +10,7 @@ RUN apt update && apt upgrade -y && apt install -y sudo git build-essential clan
 RUN adduser -u 5678 --disabled-password --gecos "" openwrt && chown -R openwrt /openwrt && cd /openwrt
 USER openwrt
 
-RUN git clone -b v14-luci-eht-rmadrad https://github.com/danpawlik/openwrt
+RUN git clone -b v15-luci-eht-rmadrad https://github.com/danpawlik/openwrt
 
 #RUN cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a
 
