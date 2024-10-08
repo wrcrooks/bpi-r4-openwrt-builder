@@ -26,6 +26,11 @@ curl -SL https://raw.githubusercontent.com/danpawlik/openwrt-builder/master/conf
 #echo "CONFIG_PACKAGE_kmod-usb-net-cdc-eem=y" >> ../openwrt/.config
 #echo "CONFIG_PACKAGE_qrencode=y" >> ../openwrt/.config
 
+echo "CONFIG_PACKAGE_libopenssl-afalg_sync=y" >> ../openwrt/.config
+echo "CONFIG_AFALG_UPDATE_CTR_IV=y" >> ../openwrt/.config
+
+sed -i '/CONFIG_PACKAGE_libopenssl-afalg=y/d' ../openwrt/.config
+
 make -C ../openwrt defconfig
 
 grep "=m" ../openwrt/.config | grep -v 'CONFIG_PACKAGE_libustream-mbedtls=m' | while read -r line; do module=$(echo "$line" | cut -f1 -d'='); sed -i "s/^$line$/# $module is not set/" ../openwrt/.config; done
